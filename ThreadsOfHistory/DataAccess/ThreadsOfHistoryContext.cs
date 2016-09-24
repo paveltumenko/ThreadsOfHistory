@@ -1,4 +1,5 @@
 ﻿using System.Data.Entity;
+using System.Data.Entity.ModelConfiguration.Conventions;
 using Models;
 
 namespace DataAccess
@@ -12,10 +13,11 @@ namespace DataAccess
         public DbSet<HistoryThread> HistoryThreads { get; set; }
         public DbSet<Event> Events { get; set; }
         public DbSet<Person> People { get; set; }
+        public DbSet<Country> Countries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
     }
 }
