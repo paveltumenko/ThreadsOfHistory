@@ -6,7 +6,7 @@ namespace DataAccess
 {
     public class ThreadsOfHistoryContext : DbContext
     {
-        public ThreadsOfHistoryContext() : base("")
+        public ThreadsOfHistoryContext() : base("ThreadsOfHistoryContext")
         {
         }
 
