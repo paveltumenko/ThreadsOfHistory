@@ -51,8 +51,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EventRepository.cs" />
-    <Compile Include="HistoryInitializer.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="Migrations\201610011528022_InitialCreate.cs" />
+    <Compile Include="Migrations\201610011528022_InitialCreate.Designer.cs">
+      <DependentUpon>201610011528022_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610021939490_Initial.cs" />
+    <Compile Include="Migrations\201610021939490_Initial.Designer.cs">
+      <DependentUpon>201610021939490_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610021955017_Initial1.cs" />
+    <Compile Include="Migrations\201610021955017_Initial1.Designer.cs">
+      <DependentUpon>201610021955017_Initial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610022005567_ChangeIdType.cs" />
+    <Compile Include="Migrations\201610022005567_ChangeIdType.Designer.cs">
+      <DependentUpon>201610022005567_ChangeIdType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031832579_IdentityId.cs" />
+    <Compile Include="Migrations\201610031832579_IdentityId.Designer.cs">
+      <DependentUpon>201610031832579_IdentityId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031840082_ExtractIdfromBaseModel.cs" />
+    <Compile Include="Migrations\201610031840082_ExtractIdfromBaseModel.Designer.cs">
+      <DependentUpon>201610031840082_ExtractIdfromBaseModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031851422_RenameID.cs" />
+    <Compile Include="Migrations\201610031851422_RenameID.Designer.cs">
+      <DependentUpon>201610031851422_RenameID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ThreadsOfHistoryContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,6 +93,29 @@
       <Project>{B39873DB-D55E-4791-BE3C-31337D18763A}</Project>
       <Name>Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201610011528022_InitialCreate.resx">
+      <DependentUpon>201610011528022_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610021939490_Initial.resx">
+      <DependentUpon>201610021939490_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610021955017_Initial1.resx">
+      <DependentUpon>201610021955017_Initial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610022005567_ChangeIdType.resx">
+      <DependentUpon>201610022005567_ChangeIdType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031832579_IdentityId.resx">
+      <DependentUpon>201610031832579_IdentityId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031840082_ExtractIdfromBaseModel.resx">
+      <DependentUpon>201610031840082_ExtractIdfromBaseModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031851422_RenameID.resx">
+      <DependentUpon>201610031851422_RenameID.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

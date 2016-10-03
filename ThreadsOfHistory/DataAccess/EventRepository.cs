@@ -14,7 +14,7 @@ namespace DataAccess
             _context = new ThreadsOfHistoryContext();
         }
 
-        public Task<Event> GetAsync(decimal id)
+        public Task<Event> GetAsync(long id)
         {
             return _context.Events.FindAsync(id);
         }

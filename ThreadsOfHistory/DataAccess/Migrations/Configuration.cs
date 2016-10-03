@@ -1,21 +1,27 @@
-﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using Models;
 
-namespace DataAccess
+namespace DataAccess.Migrations
 {
-    public class HistoryInitializer : DropCreateDatabaseIfModelChanges<ThreadsOfHistoryContext>
+    using System;
+    using System.Data.Entity.Migrations;
+
+    internal sealed class Configuration : DbMigrationsConfiguration<ThreadsOfHistoryContext>
     {
+        public Configuration()
+        {
+            AutomaticMigrationsEnabled = false;
+            ContextKey = "DataAccess.ThreadsOfHistoryContext";
+        }
+
         protected override void Seed(ThreadsOfHistoryContext context)
         {
-            var events = new List<Event>
-            {
+            context.Events.AddOrUpdate(e => e.Name,
                 new Event
                 {
                     Name = "America has been discovered",
                     Description = "",
-                    StartDate = DateTime.Parse("1492"),
+                    StartDate = DateTime.Parse("1492/01/01"),
                     EndDate = null,
                     Scale = Scale.World,
                     People = new List<Person>
@@ -28,19 +34,12 @@ namespace DataAccess
                             Died = DateTime.Parse("1506/05/20")
                         }
                     }
-                }
-            };
-
-            events.ForEach(e => context.Events.Add(e));
+                });
             context.SaveChanges();
 
-            var countries = new List<Country>
-            {
-                new Country { Code = 380, Name = "Italy" },
-                new Country { Code = 840, Name = "United States" },
-            };
-
-            countries.ForEach(c => context.Countries.Add(c));
+            context.Countries.AddOrUpdate(c => c.Name, 
+                new Country {Code = 380, Name = "Italy"},
+                new Country {Code = 840, Name = "United States"});
             context.SaveChanges();
         }
     }

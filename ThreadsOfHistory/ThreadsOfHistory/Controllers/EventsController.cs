@@ -22,7 +22,7 @@ namespace ThreadsOfHistory.Controllers
         }
 
         // GET: Events/Details/5
-        public async Task<ActionResult> Details(decimal id)
+        public async Task<ActionResult> Details(long id)
         {
             if (id < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,7 +43,7 @@ namespace ThreadsOfHistory.Controllers
         // POST: Events/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Name,Description,Scale,StartDate,EndDate")] Event @event)
+        public async Task<ActionResult> Create([Bind(Include = "Name,Description,Scale,StartDate,EndDate")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -56,7 +56,7 @@ namespace ThreadsOfHistory.Controllers
         }
 
         // GET: Events/Edit/5
-        public async Task<ActionResult> Edit(decimal id)
+        public async Task<ActionResult> Edit(long id)
         {
             if (id < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -71,7 +71,7 @@ namespace ThreadsOfHistory.Controllers
         // POST: Events/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Name,Description,Scale,StartDate,EndDate")] Event @event)
+        public async Task<ActionResult> Edit([Bind(Include = "ID,Name,Description,Scale,StartDate,EndDate")] Event @event)
         {
             if (ModelState.IsValid)
             {
@@ -84,7 +84,7 @@ namespace ThreadsOfHistory.Controllers
         }
 
         // GET: Events/Delete/5
-        public async Task<ActionResult> Delete(decimal id)
+        public async Task<ActionResult> Delete(long id)
         {
             if (id < 1)
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -99,7 +99,7 @@ namespace ThreadsOfHistory.Controllers
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(decimal id)
+        public async Task<ActionResult> DeleteConfirmed(long id)
         {
             var @event = await _repository.GetAsync(id);
             _repository.Remove(@event);
