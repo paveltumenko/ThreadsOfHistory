@@ -39,6 +39,7 @@ namespace ThreadsOfHistory.App_Start
 
             // TODO: Register your types here
             container.RegisterType<IRepository<Event>, EventRepository>();
+            container.RegisterType<IRepository<Person>, PeopleRepository>();
         }
     }
 }

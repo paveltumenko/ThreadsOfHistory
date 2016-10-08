@@ -7,8 +7,8 @@ namespace DataAccess
 {
     public interface IRepository<T> : IDisposable where T : BaseModel
     {
-        Task<Event> GetAsync(long id);
-        Task<List<Event>> GetAsync();
+        Task<T> GetAsync(long id);
+        Task<List<T>> GetAsync();
         void Add(T entity);
         void Update(T entity);
         void Remove(T entity);

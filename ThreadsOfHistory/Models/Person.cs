@@ -20,10 +20,10 @@ namespace Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime Born { get; set; }
 
-        [DataType(DataType.DateTime)]
+        [DataType(DataType.Date)]
         public DateTime? Died { get; set; }
 
         public string FullName => $"{LastName}, {MiddleName} {FirstName}";

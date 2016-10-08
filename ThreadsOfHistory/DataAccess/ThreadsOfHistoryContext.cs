@@ -29,10 +29,10 @@ namespace DataAccess
     {
         public DateConvention()
         {
-            this.Properties<DateTime>()
-            .Configure(c => c.HasColumnType("datetime2").HasPrecision(3));
+            Properties<DateTime>()
+                .Configure(c => c.HasColumnType("datetime2").HasPrecision(3));
 
-            this.Properties<DateTime>()
+            Properties<DateTime>()
                 .Where(x => x.GetCustomAttributes(false).OfType<DataTypeAttribute>()
                 .Any(a => a.DataType == DataType.Date))
                 .Configure(c => c.HasColumnType("date"));
